@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide — Make This Page Yours</title>
+  <meta name="description" content="A step-by-step guide to customizing and publishing your personal profile page." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📘</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAV — same tab-bar style as the profile page
+       ============================================ -->
+  <nav class="tabbar">
+    <div class="tabbar-window">
+      <span class="dot dot-coral"></span>
+      <span class="dot dot-sunshine"></span>
+      <span class="dot dot-sky"></span>
+      <span class="tab-label">guide.html</span>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#setup">Setup</a>
+      <a href="#customize">Customize</a>
+      <a href="#animate">Animate</a>
+      <a href="#publish">Publish</a>
+      <a href="index.html" class="nav-cta">My profile</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       INTRO
+       ============================================ -->
+  <header class="guide-hero">
+    <p class="code-comment mono muted">// getting-started guide</p>
+    <h1 class="guide-title">Let's make this page yours</h1>
+    <p class="guide-lede">
+      This is your personal profile website, built with the same HTML, CSS and JavaScript
+      you've been learning all term. This guide walks through customizing it, adding your
+      own projects, and publishing it live on GitHub Pages.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- ============================================
+         SETUP — the three files
+         ============================================ -->
+    <section id="setup" class="section">
+      <h2 class="section-heading">1. Find your files</h2>
+      <p class="section-lede">Your project is split into three files. Each one has a different job.</p>
+
+      <div class="file-table">
+        <div class="file-row file-row-head">
+          <span>File</span><span>What it's for</span>
+        </div>
+        <div class="file-row">
+          <span class="mono">index.html</span>
+          <span>The content of your page — your name, bio, projects, and links.</span>
+        </div>
+        <div class="file-row">
+          <span class="mono">style.css</span>
+          <span>Colours, fonts, spacing, and animations — how everything looks and moves.</span>
+        </div>
+        <div class="file-row">
+          <span class="mono">script.js</span>
+          <span>The interactive bits — dark mode, the mobile menu, and the name animation.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CUSTOMIZE — interactive checklist
+         ============================================ -->
+    <section id="customize" class="section">
+      <h2 class="section-heading">2. Replace the placeholder content</h2>
+      <p class="section-lede">
+        Everything here is placeholder content for a made-up student. Open <span class="mono">index.html</span>
+        and work through this list — your progress is saved automatically, even if you close this page.
+      </p>
+
+      <ul class="checklist" id="checklist">
+        <li><label><input type="checkbox" data-key="title" /> Update the page title and description</label></li>
+        <li><label><input type="checkbox" data-key="name" /> Add your name in the hero section</label></li>
+        <li><label><input type="checkbox" data-key="tagline" /> Write your own tagline, in your own voice</label></li>
+        <li><label><input type="checkbox" data-key="avatar" /> Set your initials in the avatar circle</label></li>
+        <li><label><input type="checkbox" data-key="about" /> Write your "About me" bio and quick facts</label></li>
+        <li><label><input type="checkbox" data-key="skills" /> Update the skills list to match what you know</label></li>
+        <li><label><input type="checkbox" data-key="projects" /> Add your three real projects</label></li>
+        <li><label><input type="checkbox" data-key="links" /> Fix every GitHub link so it points to your repos</label></li>
+        <li><label><input type="checkbox" data-key="email" /> Add your real contact email</label></li>
+      </ul>
+
+      <p class="checklist-progress" id="checklistProgress"></p>
+    </section>
+
+    <!-- ============================================
+         PROJECT LINKS
+         ============================================ -->
+    <section class="section">
+      <h2 class="section-heading">3. Link your real GitHub projects</h2>
+      <p class="section-lede">Each project card needs two links — swap both into your own repo.</p>
+
+      <pre class="code-block mono"><code>&lt;a href="https://github.com/<span class="hl-coral">yourusername</span>/<span class="hl-sky">your-repo-name</span>"&gt;View code&lt;/a&gt;
+&lt;a href="https://<span class="hl-coral">yourusername</span>.github.io/<span class="hl-sky">your-repo-name</span>"&gt;Live demo&lt;/a&gt;</code></pre>
+
+      <p class="section-note">
+        Only have one or two finished projects? Delete the extra <span class="mono">&lt;article class="project-card"&gt;</span>
+        block instead of leaving a fake one in place.
+      </p>
+    </section>
+
+    <!-- ============================================
+         ANIMATE — live demo of the 3 name styles
+         ============================================ -->
+    <section id="animate" class="section">
+      <h2 class="section-heading">4. Animate your name</h2>
+      <p class="section-lede">
+        Your name on the hero is split into individual letters in <span class="mono">script.js</span>,
+        which lets <span class="mono">style.css</span> animate each one separately with
+        <span class="mono">@keyframes</span>. Three styles are built in — try them below, then open
+        <span class="mono">index.html</span> and add the matching class to the
+        <span class="mono">&lt;h1 class="hero-name"&gt;</span> element.
+      </p>
+
+      <div class="anim-demo">
+        <h3 class="hero-name demo-name" id="demoName">Try Me</h3>
+
+        <div class="anim-buttons">
+          <button class="btn btn-ghost" data-mode="">Shimmer (default)</button>
+          <button class="btn btn-ghost" data-mode="name-wave">Wave</button>
+          <button class="btn btn-ghost" data-mode="name-wiggle">Wiggle</button>
+        </div>
+      </div>
+
+      <pre class="code-block mono"><code>&lt;h1 class="hero-name <span class="hl-sunshine">name-wave</span>"&gt;Your Name&lt;/h1&gt;</code></pre>
+    </section>
+
+    <!-- ============================================
+         THEME COLOURS
+         ============================================ -->
+    <section class="section">
+      <h2 class="section-heading">5. Try changing the theme colours</h2>
+      <p class="section-lede">
+        Open <span class="mono">style.css</span> and find the <span class="mono">:root</span> section
+        near the top. These are CSS variables — change a value once and it updates everywhere it's used.
+      </p>
+
+      <div class="swatch-row">
+        <div class="swatch" style="background: var(--accent-coral)"><span class="mono">--accent-coral</span></div>
+        <div class="swatch" style="background: var(--accent-sunshine)"><span class="mono">--accent-sunshine</span></div>
+        <div class="swatch" style="background: var(--accent-sky)"><span class="mono">--accent-sky</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PUBLISH — genuinely sequential, numbered steps
+         ============================================ -->
+    <section id="publish" class="section">
+      <h2 class="section-heading">6. Put it on GitHub</h2>
+
+      <ol class="step-list">
+        <li>Create a new repository on GitHub. Name it <span class="mono">yourusername.github.io</span> to publish it at the root of your GitHub Pages site.</li>
+        <li>Add <span class="mono">index.html</span>, <span class="mono">style.css</span>, <span class="mono">script.js</span> and this <span class="mono">guide.html</span> to the repository.</li>
+        <li>Commit and push, just like you've done with your other projects.</li>
+        <li>In the repository's <strong>Settings → Pages</strong>, set the source to your main branch.</li>
+        <li>Wait a minute, then visit the URL GitHub gives you — your profile is live.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Open your browser's DevTools console on the live page — there's a small message waiting for you there.</p>
+    <p><a href="index.html">← Back to my profile</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
